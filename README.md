@@ -1,5 +1,42 @@
 [![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/big-data-europe/Lobby)
 
+2023-03-14
+
+spark-zeppelin 이미지 추가
+
+![image](https://user-images.githubusercontent.com/78258412/224990257-1a365bde-36a5-4562-85dd-d54b4dc7f125.png)
+
+* spark-zeppelin의 경우 spark버전이 맞지 않으므로 spark 버전을 맞춰주어야 함.
+* spark 버전은 3.0.0을 사용
+
+* spark-zeppelin에서 실행 `docker exec -it spark-zeppelin bash`
+```
+cd / 
+wget https://archive.apache.org/dist/spark/spark-3.0.0/spark-3.0.0-bin-hadoop3.2.tgz
+tar zxvf spark-3.0.0-bin-hadoop3.2.tgz
+mv spark spark-3.0.2
+mv spark-3.0.0-bin-hadoop3.2 spark
+```
+
+--- 
+
+2023-03-14
+
+
+* Add spark-zeppelin image
+* In the case of spark-zeppelin, the spark version does not match, so the spark version must be matched.
+* Use spark version 3.0.0
+* Run `docker exec -it spark-zeppelin bash` in spark-zeppelin
+```
+cd / 
+wget https://archive.apache.org/dist/spark/spark-3.0.0/spark-3.0.0-bin-hadoop3.2.tgz
+tar zxvf spark-3.0.0-bin-hadoop3.2.tgz
+mv spark spark-3.0.2
+mv spark-3.0.0-bin-hadoop3.2 spark
+```
+
+---
+
 # Docker multi-container environment with Hadoop, Spark and Hive
 
 This is it: a Docker multi-container environment with Hadoop (HDFS), Spark and Hive. But without the large memory requirements of a Cloudera sandbox. (On my Windows 10 laptop (with WSL2) it seems to consume a mere 3 GB.)
@@ -262,26 +299,6 @@ If you need to extend some other configuration file, refer to base/entrypoint.sh
 
 
 
-
----
-
-2023-03-14
-
-spark-zeppelin 추가
-
-![image](https://user-images.githubusercontent.com/78258412/224990257-1a365bde-36a5-4562-85dd-d54b4dc7f125.png)
-
-* spark-zeppelin의 경우 spark버전이 맞지 않으므로 spark 버전을 맞춰주어야 함.
-* spark 버전은 3.0.0을 사용
-
-* spark-zeppelin에서 실행 `docker exec -it spark-zeppelin bash`
-```
-cd / 
-wget https://archive.apache.org/dist/spark/spark-3.0.0/spark-3.0.0-bin-hadoop3.2.tgz
-tar zxvf spark-3.0.0-bin-hadoop3.2.tgz
-mv spark spark-3.0.2
-mv spark-3.0.0-bin-hadoop3.2 spark
-```
 
 
 
