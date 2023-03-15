@@ -121,7 +121,7 @@ services:
       
   spark-zeppelin:
     build: .
-    image: spark-zeppelin
+    image: manduthecat/spark-zeppelin
     container_name: spark-zeppelin
     depends_on:
       - spark-master
