@@ -1,5 +1,14 @@
 [![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/big-data-europe/Lobby)
 
+2023-03-17
+
+spark-zeppelin spark 버전 변경사항
+docker 이미지 추가 후 반영 완료
+
+* spark version 변경 필요 없음
+
+---
+
 2023-03-14
 
 spark-zeppelin 이미지 추가
