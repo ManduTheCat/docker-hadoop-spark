@@ -1,9 +1,17 @@
 #!/bin/bash
 
-datadir=`echo $HDFS_CONF_dfs_datanode_data_dir | perl -pe 's#file://##'`
-if [ ! -d $datadir ]; then
-  echo "Datanode data directory not found: $datadir"
-  exit 2
-fi
+. "/spark/sbin/spark-config.sh"
 
-$HADOOP_HOME/bin/hdfs --config $HADOOP_CONF_DIR datanode
+. "/spark/bin/load-spark-env.sh"
+
+mkdir -p $SPARK_WORKER_LOG
+
+export SPARK_HOME=/spark
+
+ln -sf /dev/stdout $SPARK_WORKER_LOG/spark-worker.out
+
+/spark/sbin/../bin/spark-class org.apache.spark.deploy.worker.Worker \
+    --webui-port $SPARK_WORKER_WEBUI_PORT $SPARK_MASTER >> $SPARK_WORKER_LOG/spark-worker.out
+
+# Keep the container running
+tail -f /dev/null

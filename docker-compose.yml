@@ -132,6 +132,17 @@ services:
     environment:
       - "SPARK_MASTER=spark://spark-master:7077"
       - "SPARK_HOME=/spark"
+      
+  ubuntu-spark-worker:
+    image: ubuntu-spark-worker
+    depends_on:
+      - spark-master
+    ports:
+      - "8082:8081"
+    environment:
+      - "SPARK_MASTER=spark://spark-master:7077"
+      - CORE_CONF_fs_defaultFS=hdfs://namenode:9000
+      
 
 volumes:
   hadoop_namenode:
